@@ -14,6 +14,8 @@ source "ext/hal/atmel/asf/Kconfig"
 
 source "ext/hal/altera/Kconfig"
 
+source "ext/hal/cec/Kconfig"
+
 source "ext/hal/cmsis/Kconfig"
 
 source "ext/hal/nordic/Kconfig"

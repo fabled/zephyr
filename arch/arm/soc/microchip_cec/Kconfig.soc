@@ -1,0 +1,8 @@
+config SOC_FAMILY_CEC
+	bool "Microchip CECxxxx MCU"
+	select CPU_CORTEX_M
+	select CPU_CORTEX_M4
+	select CPU_HAS_SYSTICK
+	select HAS_CEC_HAL
+	help
+	  Enable support for Micochip CEC Cortex-M4 microcontrollers.

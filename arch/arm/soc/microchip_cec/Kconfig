@@ -1,0 +1,19 @@
+config SOC_FAMILY_CEC
+	bool
+	# omit prompt to signify a "hidden" option
+	default n
+
+if SOC_FAMILY_CEC
+config SOC_FAMILY
+	string
+	default "microchip_cec"
+endif
+
+choice
+	prompt "Microchip CECxxxx MCU Selection"
+	depends on SOC_FAMILY_CEC
+
+config SOC_CEC1702
+	bool "CEC1702"
+
+endchoice

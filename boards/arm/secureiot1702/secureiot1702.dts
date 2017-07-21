@@ -1,0 +1,27 @@
+/dts-v1/;
+
+#include "microchip/cec1702.dtsi"
+
+/ {
+	model = "Microchip SecureIoT1702 board";
+	compatible = "microchip,secureiot1702", "microchip,cec1702";
+
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,console = &uart1;
+		zephyr,flash = &flash0;
+	};
+
+	/*
+	GPIO054 = LED Red
+	GPIO053 = LED Green
+	GPIO001 = LED Blue
+	GPIO157 = LED White
+	*/
+};
+
+&uart0 {
+	status = "ok";
+	current-speed = <115200>;
+};
+

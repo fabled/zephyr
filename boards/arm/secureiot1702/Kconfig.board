@@ -1,0 +1,5 @@
+config BOARD_SECUREIOT1702
+	bool "Microchip SecureIoT1702"
+	depends on SOC_FAMILY_CEC
+	select HAS_DTS
+	select SOC_PART_NUMBER_CEC1702
