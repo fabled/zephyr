@@ -1,6 +1,9 @@
-# Kconfig - Microchip MEC HAL drivers configuration
+# Kconfig - Microchip CEC/MEC HAL drivers configuration
 #
 # SPDX-License-Identifier: Apache-2.0
 
 menuconfig HAS_MEC_HAL
 	bool "Microchip MEC HAL drivers support"
+
+menuconfig HAS_CEC_HAL
+	bool "Microchip CEC HAL drivers support"
