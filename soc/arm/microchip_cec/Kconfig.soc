@@ -1,0 +1,15 @@
+# Kconfig - Microchip CEC MCU line
+#
+# Copyright (c) 2019 Crypta Labs Ltd.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES_CEC
+	bool "Microchip CECxxxx MCU"
+	select CPU_CORTEX_M
+	select CPU_CORTEX_M4
+	select CPU_CORTEX_M_HAS_SYSTICK
+	select CPU_HAS_FPU
+	select HAS_CEC_HAL
+	help
+	  Enable support for Micochip CEC Cortex-M4 microcontrollers.
