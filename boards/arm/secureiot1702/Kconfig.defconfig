@@ -1,0 +1,22 @@
+#
+# Copyright (c) 2019 Crypta Labs Ltd.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+if BOARD_SECUREIOT1702
+
+config BOARD
+	default "secureiot1702"
+
+if UART_NS16550
+
+config UART_NS16550_PORT_0
+	def_bool y
+
+config UART_NS16550_PORT_1
+	def_bool y
+
+endif
+
+endif
