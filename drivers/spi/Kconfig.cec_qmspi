@@ -1,0 +1,23 @@
+#
+# Copyright (c) 2019 Crypta Labs Ltd.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+config SPI_CEC_QMSPI
+	bool
+	prompt "CEC MCU QMSPI controller driver"
+	depends on SPI && SOC_SERIES_CEC
+	default n
+	help
+	  Enable Quad Master SPI support on the CEC series of processors.
+
+if SPI_CEC_QMSPI
+
+config SPI_CEC_QMSPI_INTERRUPT
+	bool "CEC QMSPI Interrupt Support"
+	help
+	  Enable Interrupt support for the SPI Driver of CEC QMSPI.
+	  NOTE: Work in progress. Not ready yet.
+
+endif # SPI_CEC_QMSPI

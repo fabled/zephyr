@@ -27,4 +27,11 @@ config UART_NS16550
 
 endif # SERIAL
 
+if SPI
+
+config SPI_CEC_QMSPI
+	default y
+
+endif # SPI
+
 endif

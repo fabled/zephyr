@@ -180,6 +180,8 @@ config SPI_6_OP_MODES
 
 endif # SPI_6
 
+source "drivers/spi/Kconfig.cec_qmspi"
+
 config SPI_INTEL
 	bool "Intel SPI controller driver"
 	depends on CPU_MINUTEIA

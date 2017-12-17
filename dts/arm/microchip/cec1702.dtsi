@@ -45,6 +45,15 @@
 			label = "UART_1";
 			reg-shift = <0>;
 		};
+		spi0: spi@40005400 {
+			compatible = "microchip,cec-qmspi";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0x40005400 0x44>;
+			interrupts = <91 0>;
+			label = "spi_0";
+			status = "disabled";
+		};
 	};
 };
 

@@ -1,0 +1,26 @@
+#
+# Copyright (c) 2019 Crypta Labs Ltd.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+title: Microchip CEC QMSPI
+version: 0.1
+
+description: >
+    This binding gives a base representation of the Microchip CEC QMSPI controller
+
+inherits:
+    !include spi.yaml
+
+properties:
+    compatible:
+      constraint: "microchip,cec-qmspi"
+
+    reg:
+      type: array
+      description: mmio register space
+      generation: define
+      category: required
+
+...
