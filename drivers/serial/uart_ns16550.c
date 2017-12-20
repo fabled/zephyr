@@ -293,6 +293,11 @@ static void set_baud_rate(struct device *dev, u32_t baud_rate)
 		 */
 		divisor = ((dev_cfg->sys_clk_freq + (baud_rate << 3))
 					/ baud_rate) >> 4;
+#if defined(CONFIG_SOC_SERIES_CEC)
+		if (dev_cfg->sys_clk_freq == 48000000) {
+			divisor |= 0x8000;
+		}
+#endif
 
 		/* set the DLAB to access the baud rate divisor registers */
 		lcr_cache = INBYTE(LCR(dev));
