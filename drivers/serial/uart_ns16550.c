@@ -203,6 +203,7 @@
 
 struct uart_ns16550_device_config {
 	u32_t sys_clk_freq;
+	u16_t brd_mask;
 
 #ifdef CONFIG_UART_INTERRUPT_DRIVEN
 	uart_irq_config_func_t	irq_config_func;
@@ -251,6 +252,7 @@ static void set_baud_rate(struct device *dev, u32_t baud_rate)
 	if ((baud_rate != 0) && (dev_cfg->sys_clk_freq != 0)) {
 		/* calculate baud rate divisor */
 		divisor = (dev_cfg->sys_clk_freq / baud_rate) >> 4;
+		divisor |= dev_cfg->brd_mask;
 
 		/* set the DLAB to access the baud rate divisor registers */
 		lcr_cache = INBYTE(LCR(dev));
@@ -750,6 +752,9 @@ static void irq_config_func_0(struct device *port);
 
 static const struct uart_ns16550_device_config uart_ns16550_dev_cfg_0 = {
 	.sys_clk_freq = UART_NS16550_PORT_0_CLK_FREQ,
+#ifdef UART_NS16550_PORT_0_BRD_MASK
+	.brd_mask = UART_NS16550_PORT_0_BRD_MASK,
+#endif
 
 #ifdef CONFIG_UART_INTERRUPT_DRIVEN
 	.irq_config_func = irq_config_func_0,
@@ -804,6 +809,9 @@ static void irq_config_func_1(struct device *port);
 
 static const struct uart_ns16550_device_config uart_ns16550_dev_cfg_1 = {
 	.sys_clk_freq = UART_NS16550_PORT_1_CLK_FREQ,
+#ifdef UART_NS16550_PORT_1_BRD_MASK
+	.brd_mask = UART_NS16550_PORT_1_BRD_MASK,
+#endif
 
 #ifdef CONFIG_UART_INTERRUPT_DRIVEN
 	.irq_config_func = irq_config_func_1,
