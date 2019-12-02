@@ -29,3 +29,10 @@
 	current-speed = <115200>;
 };
 
+&spi0 {
+	status = "okay";
+};
+
+&gpspi0 {
+	status = "okay";
+};

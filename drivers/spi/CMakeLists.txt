@@ -3,6 +3,7 @@
 zephyr_library()
 
 zephyr_library_sources_ifdef(CONFIG_SPI_CC13XX_CC26XX		spi_cc13xx_cc26xx.c)
+zephyr_library_sources_ifdef(CONFIG_SPI_CEC_GPSPI	spi_cec_gpspi.c)
 zephyr_library_sources_ifdef(CONFIG_SPI_CEC_QMSPI	spi_cec_qmspi.c)
 zephyr_library_sources_ifdef(CONFIG_SPI_DW		spi_dw.c)
 zephyr_library_sources_ifdef(CONFIG_SPI_STM32		spi_ll_stm32.c)

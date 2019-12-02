@@ -21,3 +21,11 @@ config SPI_CEC_QMSPI_INTERRUPT
 	  NOTE: Work in progress. Not ready yet.
 
 endif # SPI_CEC_QMSPI
+
+config SPI_CEC_GPSPI
+	bool
+	prompt "CEC MCU GP-SPI controller driver"
+	depends on SPI && SOC_SERIES_MEC
+	default n
+	help
+	  Enable General Purpose SPI support on the CEC series of processors.

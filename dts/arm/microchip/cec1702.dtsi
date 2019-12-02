@@ -52,6 +52,14 @@
 			label = "SPI_0";
 			status = "disabled";
 		};
+		gpspi0: spi@40009400 {
+			compatible = "microchip,cec-gpspi";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0x40009400 0x1C>;
+			label = "GPSPI_0";
+			status = "disabled";
+		};
 	};
 };
 

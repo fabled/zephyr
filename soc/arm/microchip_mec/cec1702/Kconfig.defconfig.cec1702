@@ -26,6 +26,9 @@ config SPI_XEC_QMSPI
 config SPI_CEC_QMSPI
 	def_bool y
 
+config SPI_CEC_GPSPI
+       def_bool y
+
 endif # SPI
 
 endif # SOC_CEC1702
