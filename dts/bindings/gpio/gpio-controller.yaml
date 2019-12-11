@@ -26,7 +26,7 @@ properties:
           local offset 0 .. 17, are in use.  For cases in which there might be
           holes in the slot range, this value should be the max slot number-1.
     gpio-reserved-ranges:
-      type: array
+      type: bit-ranges
       required: false
       description: |
           If these GPIOs do not happen to be the first N GPIOs at offset

@@ -1047,6 +1047,13 @@ class Node:
 
             return self._standard_phandle_val_list(prop)
 
+        if prop_type == "bit-ranges":
+            nums = prop.to_nums()
+            mask = 0
+            for a in range(0, len(nums), 2):
+                mask |= (1 << nums[a] + nums[a + 1]) - 1 ^ (1 << nums[a]) - 1
+            return "0x%x" % mask
+
         # prop_type == "compound". We have already checked that the 'type:'
         # value is valid, in _check_binding().
         #
@@ -1586,7 +1593,7 @@ def _check_prop_type_and_default(prop_name, prop_type, required, default,
 
     ok_types = {"boolean", "int", "array", "uint8-array", "string",
                 "string-array", "phandle", "phandles", "phandle-array",
-                "compound"}
+                "bit-ranges", "compound"}
 
     if prop_type not in ok_types:
         _err("'{}' in 'properties:' in {} has unknown type '{}', expected one "

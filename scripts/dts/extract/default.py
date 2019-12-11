@@ -54,6 +54,9 @@ class DTDefault(DTDirective):
         else:
             prop_values = reduced[node_path]['props'][prop]
 
+        if prop_type == 'bit-ranges':
+            return
+
         if prop_type in {"string-array", "array", "uint8-array"}:
             if not isinstance(prop_values, list):
                 prop_values = [prop_values]

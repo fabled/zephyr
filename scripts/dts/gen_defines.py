@@ -223,7 +223,7 @@ def write_props(node):
             out_dev(node, ident, 1 if prop.val else 0)
         elif prop.type == "string":
             out_dev_s(node, ident, prop.val)
-        elif prop.type == "int":
+        elif prop.type in { "int", "bit-ranges" }:
             out_dev(node, ident, prop.val)
         elif prop.type == "array":
             for i, val in enumerate(prop.val):
